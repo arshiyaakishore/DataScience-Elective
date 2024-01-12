@@ -1,0 +1,62 @@
+#Q1
+#seq(from, to, by, length.out)
+#rep(x, times)
+v1=c(seq(1.3,4.9,0.3))
+v1
+v2=c(rep(seq(1,4,1),5))
+v2
+v3=c(seq(14,0,-2))
+v3
+v4=c(rep(5,2),rep(12,2), rep(13,2), rep(20,2))
+v4
+
+#Q2
+data=iris
+data
+#2A
+typeof(data)
+class(data)
+
+#2B
+nrow(data)
+ncol(data)
+
+dim(data)
+str(data)
+summary(data)
+
+#2C
+#The variable Species is a factor and it has 3 levels.
+
+#Q3
+#3a
+mean_sepal_width <- tapply(iris$Sepal.Width, iris$Species, mean)
+sd_sepal_width <- tapply(iris$Sepal.Width, iris$Species, sd)
+
+mean_sepal_length <- tapply(iris$Sepal.Length, iris$Species, mean)
+sd_sepal_length <- tapply(iris$Sepal.Length, iris$Species, sd)
+
+#3b
+iris.class <- iris
+iris.class$Calyx.Width <- sapply(iris.class$Sepal.Length, function(x) {
+  ifelse(x < 5, "short", "long")
+})
+iris.class
+
+
+#Q4
+data=mtcars
+data
+str(mtcars)
+names(mtcars)
+
+ans4a=mtcars[mtcars$cyl>=5, ]
+ans4a
+subset(data,mtcars$cyl>=5)
+
+ans4b=mtcars[1:10, ]
+ans4b
+head(data,10)
+
+ans4c=mtcars[grep("Honda", rownames(mtcars)), ]
+ans4c
